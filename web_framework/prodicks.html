@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta chartset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="web_design.css">
+</head>
+<body>
+    <style>
+        .fuckin-ass-row {
+            background-color:#c6e2ff;
+            height: 400px;
+        }
+
+        .your-mom {
+            background-color: #3399ff;
+            color: white;
+            font-size:19px;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        } 
+
+        .navbar-customclass {
+                
+                background-color:#c6e2ff;
+            }
+            /* changing brand text color*/
+            .navbar-customclass .navbar-brand,
+            .navbar-customclass .navbar-text {
+                color:white;
+                font-size:19px;
+                font-family: "Comic Sans MS", "Comic Sans", cursive;
+            }
+            /* navigation link text color */
+            .navbar-customclass .navbar-nav .nav-link {
+                /* color: rgba(255,255,255,.6); */
+                color:#3399ff;
+                padding-right: 30px;
+                font-size:19px;
+                font-family: "Comic Sans MS", "Comic Sans", cursive;
+            }
+            /* navigation links anchor hover and active styles */
+            .navbar-customclass .nav-item.active .nav-link,
+            .navbar-customclass .nav-item:hover .nav-link {
+                color:white;
+                font-size:19px;
+                font-family: "Comic Sans MS", "Comic Sans", cursive;
+            } 
+
+        .deez-nuts {
+            color: black;
+            font-size: 50px;
+            font-family: cursive;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .butts {
+            color: #3399ff;
+            border-color: #c6e2ff;
+            font-size: 20px;
+            height: 60px;
+            font-family: cursive;
+        }
+
+        .padding {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .padding_size {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .peepee_name {
+            padding-top: 10px; 
+            font-size: 18px;         
+            color: #808080;
+            font-weight: bold;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+
+        .peepee_other {
+            padding-bottom: 10px;            
+            color: #999999; 
+            font-size: 17px; 
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+
+        .picture_border {
+            color: black;
+            border-color: black;
+        }
+
+        .transition {
+            background-color: white;
+        }
+
+        .drop_menu {            
+            color: black; 
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+
+    </style>
+        <div class="row deez-nuts justify-content-center align-items-center">
+            Sweet Tooth, Inc.
+        </div>
+            <nav class="navbar navbar-customclass navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="doodoobase.html">
+                                <i class="bi-house-door-fill" style="font-size: 1.5rem;"></i>
+                            </a>
+                            </li> 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Price
+                            </a>
+                            <ul class="dropdown-menu drop_menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#"> < $10 </a></li>
+                                <li><a class="dropdown-item" href="#">$10 - $20</a></li>
+                                <li><a class="dropdown-item" href="#">$20 - $30</a></li>
+                                <li><a class="dropdown-item" href="#"> > $30</a></li>
+                            </ul>
+                            </li>                 
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Type
+                        </a>
+                        <ul class="dropdown-menu drop_menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Candy</a></li>
+                            <li><a class="dropdown-item" href="#">Bake Shop</a></li>
+                            <li><a class="dropdown-item" href="#">Drinks</a></li>
+                            <li><a class="dropdown-item" href="#">Chocolatier</a></li>
+                        </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Sort By
+                            </a>
+                            <ul class="dropdown-menu drop_menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Featured</a></li>
+                                <li><a class="dropdown-item" href="#">Low to High</a></li>
+                                <li><a class="dropdown-item" href="#">High to Low</a></li>
+                            </ul>
+                            </li>
+                    </ul>
+                    <form class="d-flex padding_side">
+                        <input class="form-control me-2" type="search" placeholder="Help me find bitches" aria-label="Search">
+                        <button class="btn your-mom" type="submit">
+                            <i class="bi-search" style="font-size: 1.5rem;"></i>
+                        </button>
+                    </form>
+                    <button id="yeehaw" class="btn your-mom padding_side">
+                        <i class="bi-cart-fill" style="font-size: 1.5rem;"></i>
+                    </button>
+                    <script type="text/javascript">
+                        document.getElementById("yeehaw").onclick = function () {
+                            location.href = "cart.html";
+                        };
+                    </script>                
+                    </div>
+                </div>
+                </nav> 
+
+                <div class="transition">
+                    <div class="row picture_border">
+                        <div class="col-sm-4 border padding">
+                            <center><img src="chocolate_chip_cockies.jpg" alt="weenies", width="300", height="250"/>
+                                <button id="cookies" class="btn peepee_name">
+                                    Choc-hoe-late Chip Cookies
+                                </button>
+                                <script type="text/javascript">
+                                    document.getElementById("cookies").onclick = function () {
+                                        location.href = "product_page.html";
+                                    };
+                                </script>                          
+                                <p class="peepee_other">$20.00</p>
+                            </center> 
+                        </div>    
+                        <div class="col-sm-4 border padding">
+                            <center><img src="gummy_bears.jpg" alt="weenies", width="300", height="250"/>
+                                <center><button id="bears" class="btn peepee_name">
+                                    Cummy Bears
+                                </button>
+                                <script type="text/javascript">
+                                    document.getElementById("bears").onclick = function () {
+                                        location.href = "product_page.html";
+                                    };
+                                </script></center>  
+                                <p class="peepee_other">$4.20 per Cummy</p>
+                            </center> 
+                        </div>  
+                        <div class="col-sm-4 border padding">
+                            <center><img src="chocolate_bar.jpg" alt="weenies", width="300", height="250"/>
+                                <center><button id="chocolit" class="btn peepee_name">
+                                    ChocoLIT Bar
+                                </button>
+                                <script type="text/javascript">
+                                    document.getElementById("chocolit").onclick = function () {
+                                        location.href = "product_page.html";
+                                    };
+                                </script></center>  
+                                <p class="peepee_other">$18.00</p>
+                            </center> 
+                        </div>  
+                        <div class="col-sm-4 border padding">
+                            <center><img src="strawberry_chews.png" alt="weenies", width="300", height="250"/>
+                                <center><button id="stroobee" class="btn peepee_name">
+                                    Stroobee Chews
+                                </button>
+                                <script type="text/javascript">
+                                    document.getElementById("stroobee").onclick = function () {
+                                        location.href = "product_page.html";
+                                    };
+                                </script></center>  
+                                <p class="peepee_other">$18.00</p>
+                            </center> 
+                        </div>  
+                        <div class="col-sm-4 border padding">
+                            <center><img src="cookies_n_cream.jpg" alt="weenies", width="300", height="250"/>
+                                <center><button id="cookreamy" class="btn peepee_name">
+                                    Cookies n Creamy ;) Bar
+                                </button>
+                                <script type="text/javascript">
+                                    document.getElementById("cookreamy").onclick = function () {
+                                        location.href = "product_page.html";
+                                    };
+                                </script></center>  
+                                <p class="peepee_other">$69.00</p>
+                            </center> 
+                        </div>    
+                        <div class="col-sm-4 border padding">
+                            <center><img src="variety_seltzers.png" alt="weenies", width="300", height="250"/>
+                                <center><button id="seltzy" class="btn peepee_name">
+                                    Variety Seltzers 4 pk.
+                                </button>
+                                <script type="text/javascript">
+                                    document.getElementById("seltzy").onclick = function () {
+                                        location.href = "product_page.html";
+                                    };
+                                </script></center>  
+                                <p class="peepee_other">$16.00</p>
+                            </center> 
+                        </div>
+                </div>                                                                                                                          
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>
+        
