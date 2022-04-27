@@ -75,10 +75,8 @@ def login():
 def ma():
     ##### replace these with actual database call: ##############
     # itemInfo = db.getItems(storeid)
-    
-    product_list = [("chocolate_chip_cockies", "Chocolate Chip Cookies", 1234, 20), ("gummy_bears", "Gummy Bears", 6969, 18), 
-    ("chocolate_bar", "Chocolate Bar", 7979, 18), ("cookies_n_creamy", "Cookies n Cream Bar", 2929, 18), ("stroobee_chews", "Strawberry Chews", 1239, 18),
-    ("variety_seltzies", "Variety Seltzers 4pk", 7800, 16)]
+
+    product_list = query_products(1)
     # product_tags = ("chocolate_chip_cockies", 1234, 20) #display name, tag name, productid, price
     # itemInfo = db.getItems(storeid) # get list of all items in db
     return render_template('prodicks.html', product_list=product_list)
