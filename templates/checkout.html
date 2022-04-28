@@ -142,13 +142,14 @@
         <div class="transition">
         <div class="container">
             <div class="row deez-nuts padding justify-content-left align-items-left">
-                Your Cart
+                Checkout
             </div> 
-            {% for doodoo in cart_items %}
+            {{}}
+            {% for doodoo in checkout_items %}
             <div class="row border-top">
                 <div class="col-sm-4 padding">
-                    <center><img src="../static/{{ doodoo[1] }}.jpg" alt="weenies", width="300", height="250"/>
-                    </center>
+                    <!-- <center><img src="../static/{{ doodoo[1] }}.jpg" alt="weenies", width="300", height="250"/>
+                    </center> -->
                 </div>
                 <div class="col">
                     <!-- product id, should update to user name -->
@@ -157,33 +158,26 @@
                     <p class="peepee_other">${{ doodoo[2] }}</p>
                     <!-- price  -->
                     <p class="peepee_other">${{ doodoo[3] }}</p>
-                    <center>
-                        <form action="/delete-products" method="post">
-                        <img src="../static/{{ doodoo[1] }}.jpg" alt="weenies", width="300", height="250"/>
-                        <p class="peepee_name"> {{ doodoo[1] }}</p>
-                        order tuple is {{doodoo}}
-                        orderid is {{doodoo[6]}}
-                        <input type="hidden" name="orderid" value="{{ doodoo[6] }}"/>
-                        <div class="custom-select" style="width:200px;">
-                        </div>
-                        <button type="submit" class="btn your-mom">
-                            Delete
-                        </button>
-                    </center></form>
                     
                 </div>
             </div>
             {% endfor %}
 
+            <!-- NOT SURE WHY THIS SHIT ISNT WORKING -->
             <div class="row padding">
-                <div class="col padding"> 
-                    <button id="checkout" class="btn butts submit-button" >Checkout</button>
-                    <script type="text/javascript">
-                        document.getElementById("checkout").onclick = function () {
-                            location.href = "http://127.0.0.1:5000/checkout";
-                        };
-                    </script>
-                    <!-- <button type="button" class="btn butts">Checkout</button> -->
+                <div class="col padding">
+                    <center>
+                        <form action="/checkout" method="post">
+                        <input type="hidden" name="userid" value="{{ user_info[0] }}"/>
+                        <input type="hidden" name="paymentid" value="{{ user_info[1] }}"/>
+                        <p class="peepee_desc">Your total is {{ total_cost }}</p>
+                        <p class="peepee_other">Pay with {{ payment_shit[1] }}</p>
+                        <div class="custom-select" style="width:200px;">
+                        </div>
+                        <button type="submit" class="btn butts">
+                            Delete
+                        </button>
+                    </center></form>
                 </div>
             </div>
         </div>

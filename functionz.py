@@ -26,9 +26,9 @@ def query_products(storeid):
         sql = f"SELECT productid, name, foodtype, price, description FROM Products WHERE storeid = {storeid}"
         cur.execute(sql)
         products = cur.fetchall()
-        print("---The Requested Store Menu Is---\n")
-        for row in products:
-            print(row)
+        # print("---The Requested Store Menu Is---\n")
+        # for row in products:
+        #     print(row)
         cur.close()
         return products
     except (Exception, psycopg2.DatabaseError) as error:
@@ -101,6 +101,90 @@ def top_stores():
         if conn is not None:
             conn.close()
 
+def query_payment(paymentid):
+    """ query payments based on paymentid
+        See console for printed info
+    """
+    conn = None
+    try:
+        conn = psycopg2.connect(host = hostname,
+        dbname = database,
+        user= username,
+        password = pwd,
+        port = port_id)
+
+        cur = conn.cursor()
+
+        sql = f"SELECT * FROM Payments WHERE paymentid = {paymentid}"
+        cur.execute(sql)
+        payments = cur.fetchall()
+        # print("---The Requested Store Menu Is---\n")
+        # for row in products:
+        #     print(row)
+        cur.close()
+        return payments
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+def get_total(userid):
+    """ query payments based on paymentid
+        See console for printed info
+    """
+    conn = None
+    try:
+        conn = psycopg2.connect(host = hostname,
+        dbname = database,
+        user= username,
+        password = pwd,
+        port = port_id)
+
+        cur = conn.cursor()
+
+        sql = f"SELECT sum(totalcost) FROM orders WHERE userid = {userid}"
+        cur.execute(sql)
+        payments = cur.fetchall()
+        # print("---The Requested Store Menu Is---\n")
+        # for row in products:
+        #     print(row)
+        cur.close()
+        return payments
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
+def query_user(userid):
+    """ query payments based on paymentid
+        See console for printed info
+    """
+    conn = None
+    try:
+        conn = psycopg2.connect(host = hostname,
+        dbname = database,
+        user= username,
+        password = pwd,
+        port = port_id)
+
+        cur = conn.cursor()
+
+        sql = f"SELECT * FROM users WHERE userid = {userid}"
+        cur.execute(sql)
+        users = cur.fetchall()
+        # print("---The Requested Store Menu Is---\n")
+        # for row in products:
+        #     print(row)
+        cur.close()
+        return users
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+
 def top_users():
     """ Returns tuples of top users, by money spent.
         Check console for log of info.
@@ -164,7 +248,7 @@ def login_attempt(user, password):
         if conn is not None:
             conn.close()
 
-def query_order(orderid):
+def query_order(userid):
     """ query orders based on orderid
         We could also do this based off userid instead... might be better.
     """
@@ -178,21 +262,20 @@ def query_order(orderid):
 
         cur = conn.cursor()
 
-        sql = f"SELECT * FROM orders WHERE orderid = {orderid}"
+        sql = f"SELECT * FROM orders WHERE userid = '{userid}'"
         cur.execute(sql)
         rows = cur.fetchall()
-        print("---The Requested Order Is---\n")
-        for row in rows:
-            print(row)
+        # print("---The Requested Order Is---\n")
+        # for row in rows:
+        #     print(row)
         cur.close()
         return rows
     except (Exception, psycopg2.DatabaseError) as error:
         print(error)
+        print("doodooo query shit not working")
     finally:
         if conn is not None:
             conn.close()
-
-    return tuple
 
 def insert_address(street, city, state, zipcode):
     """ Inserts address into DB, if it does not already exist.
@@ -319,7 +402,7 @@ def update_product_price(productid, new_price):
         if conn is not None:
             conn.close()
 
-def delete_product(productid):
+def delete_order(orderid):
     """ Deletes product from DB based on productid.
         Check console for log of info.
         Return Type: Boolean. IF TRUE: Success, do nothing | IF FALSE: Error, give something-wrong.html.
@@ -334,7 +417,7 @@ def delete_product(productid):
         port = port_id)
 
         cur = conn.cursor()
-        sql = f"DELETE FROM products CASCADE WHERE productid = {productid}"
+        sql = f"DELETE FROM orders CASCADE WHERE orderid = {orderid}"
         print("Delete product statement:\t" + sql)
         cur.execute(sql)
         #Commits official changes to DB SweetTooth
@@ -348,6 +431,7 @@ def delete_product(productid):
     finally:
         if conn is not None:
             conn.close()
+          
 
 def product_price(productid):
     """ Returns float value of a price for a product, since we need this to compute for insert_order().
